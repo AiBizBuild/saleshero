@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)file:///C:/Users/jt007/Downloads/SalesHero_5.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Sales Hero — The Closer's Journey</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="stylesheet" href="./Sales Hero — The Closer&#39;s Journey_files/css2">
-<script src="./Sales Hero — The Closer&#39;s Journey_files/react.development.js.download"></script>
-<script src="./Sales Hero — The Closer&#39;s Journey_files/react-dom.development.js.download"></script>
-<script src="./Sales Hero — The Closer&#39;s Journey_files/babel.min.js.download"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#08080F;font-family:'DM Sans',sans-serif;color:#F0F0F0;min-height:100vh}
@@ -24,20 +21,21 @@ body{background:#08080F;font-family:'DM Sans',sans-serif;color:#F0F0F0;min-heigh
 .spin{width:38px;height:38px;border:3px solid #1E1E30;border-top-color:#FFD700;border-radius:50%;animation:fi 0s,spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 </style>
+<style>
+@media(max-width:600px){
+  .ht{font-size:48px!important}
+  button.btn{width:100%!important}
+  div[style*="padding: 40px"]{padding:20px 16px!important}
+  div[style*="max-width: 480px"],div[style*="max-width:480px"]{max-width:100%!important}
+  div[style*="grid-template-columns"]{grid-template-columns:1fr!important}
+}
+@media(max-width:400px){.ht{font-size:38px!important}}
+</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
-
-<style>
-@media (max-width: 600px) {
-  .ht { font-size: 48px !important; }
-  div[style*="padding: 40px"] { padding: 20px 16px !important; }
-  button.btn { width: 100% !important; }
-  div[style*="max-width: 480px"], div[style*="max-width: 520px"] { max-width: 100% !important; }
-  div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
-}
-</style>
-
+</head>
+<body>
 <div id="loading" style="position:fixed;inset:0;background:#08080F;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:14px">
   <div class="spin"></div>
   <div style="color:#8892A4;font-size:13px;letter-spacing:.1em">LOADING...</div>
@@ -2574,4 +2572,5 @@ const root=ReactDOM.createRoot(document.getElementById("root"));
 root.render(<SalesHero/>);
 document.getElementById("loading").style.display="none";
 </script>
-</body></html>
+</body>
+</html>
