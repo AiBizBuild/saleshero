@@ -6678,4 +6678,19 @@ document.getElementById("loading").style.display = "none";
 
 
 
+
+<div id="err-overlay" style="display:none;position:fixed;inset:0;background:#08080F;color:#FF4757;font-family:monospace;font-size:13px;padding:20px;z-index:99999;overflow:auto;white-space:pre-wrap"></div>
+<script>
+window.onerror = function(msg, src, line, col, err) {
+  var el = document.getElementById('err-overlay');
+  el.style.display = 'block';
+  el.textContent = 'JS ERROR:\n' + msg + '\nFile: ' + src + '\nLine: ' + line + '\n\n' + (err && err.stack ? err.stack : '');
+};
+window.onunhandledrejection = function(e) {
+  var el = document.getElementById('err-overlay');
+  el.style.display = 'block';
+  el.textContent += '\nUNHANDLED PROMISE:\n' + e.reason;
+};
+</script>
+
 </body></html>
