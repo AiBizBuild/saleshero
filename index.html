@@ -2520,6 +2520,28 @@ function Ending({game,onRestart,onNewGamePlus}){
 }
 
 // ── ROOT ──────────────────────────────────────────────────────
+
+class ErrorBoundary extends React.Component {
+  constructor(props){super(props);this.state={err:null};}
+  static getDerivedStateFromError(e){return {err:e};}
+  render(){
+    if(this.state.err){
+      return (
+        <div style={{padding:20,background:"#FF4757",color:"#fff",fontFamily:"monospace",fontSize:13,minHeight:"100vh",whiteSpace:"pre-wrap"}}>
+          <strong>GAME ERROR — send this to support:</strong>{"
+
+"}
+          {this.state.err.toString()}{"
+
+"}
+          {this.state.err.stack}
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 function SalesHero(){
   const [scene,setScene]=useState("splash");
   const [act1Choice,setAct1Choice]=useState("marcus");
@@ -2569,7 +2591,7 @@ function SalesHero(){
 
 // Mount
 const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(<SalesHero/>);
+root.render(<ErrorBoundary><SalesHero/></ErrorBoundary>);
 document.getElementById("loading").style.display="none";
 </script>
 </body>
